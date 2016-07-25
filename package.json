@@ -46,7 +46,8 @@
   "homepage": "https://github.com/eddyystop/feathers-tests-app-users#readme",
   "dependencies": {
     "debug": "^2.2.0",
-    "object.assign": "^4.0.4"
+    "object.assign": "^4.0.4",
+    "sift": "crcn/sift.js"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
