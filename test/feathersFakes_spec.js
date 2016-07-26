@@ -10,8 +10,8 @@ const feathersStubs = require('../lib');
 const now = Date.now();
 const usersDb = [
   // x: 2 avoid complaints about duplicate code
-  { _id: 'a', email: 'a', isVerified: false, verifyToken: '000', verifyExpires: now + 50000, x: 2 },
-  { _id: 'b', email: 'b', isVerified: true, verifyToken: null, verifyExpires: null, x: 2 },
+  { _id: 'a', email: 'a', x: 2, isVerified: false, verifyToken: '000', verifyExpires: now + 50000 },
+  { _id: 'b', email: 'b', x: 2, isVerified: true, verifyToken: null, verifyExpires: null },
 ];
 
 // Tests
