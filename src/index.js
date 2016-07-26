@@ -52,7 +52,7 @@ module.exports.users = function users(app, usersDb) {
     },
     update(id, user, params, cb) { // always use with a callback
       debug('/users update: %s %o %o', id, user, params);
-      const index = usersDb.findIndex((user1 => user1._id === id));
+      const index = usersDb.findIndex(user1 => user1._id === id);
 
       if (index === -1) {
         return cb(new Error(`users.update _id=${id} not found.`));
