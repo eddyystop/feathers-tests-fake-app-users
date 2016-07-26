@@ -9,6 +9,8 @@
   },
   "rules": {
     "func-names": 0,
+    "max-statements": ["error", 50, { "ignoreTopLevelFunctions": true }],
+    "no-use-before-define": [2, "nofunc"],
     "react/jsx-first-prop-new-line": 0,
     "react/jsx-indent-props": 0,
     "react/prefer-stateless-function": 0
