@@ -1,6 +1,6 @@
 {
   "name": "feathers-tests-fake-app-users",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Fake some feathers dependencies in service unit tests. Starter for your own customized fakes",
   "main": "lib/",
   "directories": {
