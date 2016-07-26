@@ -3,6 +3,7 @@ Fake some Feathers dependencies in service unit tests. Starter for your own cust
 
 [![Build Status](https://travis-ci.org/eddyystop/feathers-tests-fake-app-users.svg?branch=master)](https://travis-ci.org/eddyystop/feathers-tests-fake-app-users)
 [![Coverage Status](https://coveralls.io/repos/github/eddyystop/feathers-tests-fake-app-users/badge.svg?branch=master)](https://coveralls.io/github/eddyystop/feathers-tests-fake-app-users?branch=master)
+[![Code Climate](https://codeclimate.com/repos/57979ed0b9ed527dd00004c2/badges/e5a3250f5a86a1e16ea6/gpa.svg)](https://codeclimate.com/repos/57979ed0b9ed527dd00004c2/feed)
 
 ## Code Example
 
