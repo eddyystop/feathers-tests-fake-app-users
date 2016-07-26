@@ -1,8 +1,7 @@
 
 /* global assert, describe, it */
 /* eslint  no-param-reassign: 0, no-shadow: 0, no-unused-vars: 0, no-var: 0, one-var: 0,
-one-var-declaration-per-line: 0 */
-/*eslint no-use-before-define: [2, "nofunc"] */
+one-var-declaration-per-line: 0, no-use-before-define: [2, "nofunc"] */
 
 const assert = require('chai').assert;
 const feathersFakes = require('../lib');
