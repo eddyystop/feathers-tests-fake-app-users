@@ -12,7 +12,12 @@ const defaultVerifyDelay = 1000 * 60 * 60 * 24 * 5; // 5 days
 // user DB
 
 const now = Date.now();
-const usersDb = [
+var usersDb = [
+  // x: 1 avoid complaints about duplicate code
+  { _id: 'a', x: 1, email: 'a', isVerified: false, verifyToken: '000', verifyExpires: now + 50000 },
+  { _id: 'b', x: 1, email: 'b', isVerified: true, verifyToken: null, verifyExpires: null },
+];
+usersDb = [
   // x: 1 avoid complaints about duplicate code
   { _id: 'a', x: 1, email: 'a', isVerified: false, verifyToken: '000', verifyExpires: now + 50000 },
   { _id: 'b', x: 1, email: 'b', isVerified: true, verifyToken: null, verifyExpires: null },
