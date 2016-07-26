@@ -9,7 +9,6 @@
   },
   "rules": {
     "func-names": 0,
-    "max-statements": 1,
     "no-use-before-define": ["off", { "functions": false, "classes": false }],
     "react/jsx-first-prop-new-line": 0,
     "react/jsx-indent-props": 0,
