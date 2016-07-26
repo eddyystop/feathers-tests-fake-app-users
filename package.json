@@ -1,7 +1,7 @@
 {
   "name": "feathers-tests-fake-app-users",
   "version": "0.1.0",
-  "description": "Fake some feathers dependencies in service unit tests. Starter for your customized fakes",
+  "description": "Fake some feathers dependencies in service unit tests. Starter for your own customized fakes",
   "main": "lib/",
   "directories": {
     "lib": "lib"
@@ -62,6 +62,7 @@
     "eslint-plugin-import": "^1.11.1",
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^5.2.2",
+    "feathers-service-verify-reset": "0.3.1",
     "istanbul": "^0.4.4",
     "mocha": "^2.5.3"
   },
