@@ -9,10 +9,10 @@ Fake some Feathers dependencies in service unit tests. Starter for your own cust
 The following example is from `test/example.js`.
 It may be run with `npm run test:es6`.
 
-In this example we want to perform some unit tests on feathers-service-verify-reset's resend method,
-so we need to fake its Feathers dependencies app and users.
-We would be running integration tests if we used Feathers' actual app and users,
-and tsuch tests would be more complicated.
+In this example we want to perform some unit tests on `feathers-service-verify-reset`'s resend method,
+so we need to fake its Feathers dependencies `app` and `users`.
+We would be running integration tests if we used Feathers' actual `app` and `users`,
+and such tests would be more complicated.
 
 ```javascript
 const feathersFakes = require('feathers-tests-fake-app-user');
@@ -59,14 +59,14 @@ describe('verifyReset::resend', () => {
 ## Motivation
 
 Unit tests are better tests than integration-only tests.
-It can however be difficult to fake a dependencies of a piece of code.
+It can however be difficult to fake the dependencies of a piece of code.
 This package shows an approach to faking the most common dependencies in a Feathers' project.
 
 ## Installation
 
 Install [Nodejs](https://nodejs.org/en/).
 
-Run `npm install feathers-tests-fake-app-users --save` in your project folder.
+Run `npm install feathers-tests-fake-app-users --save-dev` in your project folder.
 
 You can then require the utilities.
 
@@ -75,8 +75,9 @@ It will run on Node 6+ without transpiling.
 
 ## API Reference
 
-See Code Example.
-See `src/index.js` for details.
+See Code Example above.
+
+The exports in `src/index.js` are fully documented.
 
 ## Tests
 
