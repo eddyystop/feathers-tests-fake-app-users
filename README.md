@@ -29,9 +29,8 @@ describe('verifyReset::resend', () => {
     db = clone(testUsersDb);
     app = feathersFakes.app(); // stub Feathers app
     users = feathersFakes.users(app, db); // mock users service, passing it the test database
-
-    // This is equivalent to app.configure(verifyResetService());
-    verifyResetService().call(app);
+    app.configure(verifyResetService());
+    
     // Internally verifyResetService() attaches itself as a service with
     // app.use('/verifyReset/:action/:value', {...});
     // So now we get a handle to that service

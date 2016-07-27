@@ -14,8 +14,12 @@ const debug = require('debug')('test:feathersStubs');
 module.exports.app = function app(config) {
   return {
     services: {},
-    use(route, serviceObject) {
-      this.services[route] = serviceObject;
+    configure(fcn) {
+      fcn.call(this);
+      return this;
+    },
+    get(str) {
+      return (config || {})[str];
     },
     service(route) {
       if (!(route in this.services)) {
@@ -24,8 +28,8 @@ module.exports.app = function app(config) {
 
       return this.services[route];
     },
-    get(str) {
-      return (config || {})[str];
+    use(route, serviceObject) {
+      this.services[route] = serviceObject;
     },
   };
 };
