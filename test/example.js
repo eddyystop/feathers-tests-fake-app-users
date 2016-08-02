@@ -12,7 +12,7 @@ const defaultVerifyDelay = 1000 * 60 * 60 * 24 * 5; // 5 days
 // user DB
 
 const now = Date.now();
-const usersDb = [
+const usersDb = [ // faked in-memory database
   // x: 1 avoid complaints about duplicate code
   { _id: 'a', x: 1, email: 'a', isVerified: false, verifyToken: '000', verifyExpires: now + 50000 },
   { _id: 'b', x: 1, email: 'b', isVerified: true, verifyToken: null, verifyExpires: null },
@@ -39,7 +39,8 @@ describe('verifyReset::resend', () => {
   beforeEach(() => {
     db = clone(usersDb);
     app = feathersFakes.app(); // stub feathers app
-    users = feathersFakes.users(app, db); // mock users service, passing it its fake database
+    users = feathersFakes.makeDbService(app, 'users', db); // mock users service
+    app.use('/users', users);
     app.configure(verifyResetService());
 
     // Internally verifyResetService() attaches itself as a service with

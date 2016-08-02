@@ -9,6 +9,7 @@
   },
   "rules": {
     "func-names": 0,
+    "no-use-before-define": 0, // because I understand hoisting
     "react/jsx-first-prop-new-line": 0,
     "react/jsx-indent-props": 0,
     "react/prefer-stateless-function": 0

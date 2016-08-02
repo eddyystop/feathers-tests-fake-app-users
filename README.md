@@ -1,6 +1,8 @@
 ## feathers-tests-fake-app-users
 Fake some Feathers dependencies in service unit tests. Starter for your own customized fakes
 
+> Fake `app` and database services such as `users`.
+
 [![Build Status](https://travis-ci.org/eddyystop/feathers-tests-fake-app-users.svg?branch=master)](https://travis-ci.org/eddyystop/feathers-tests-fake-app-users)
 [![Coverage Status](https://coveralls.io/repos/github/eddyystop/feathers-tests-fake-app-users/badge.svg?branch=master)](https://coveralls.io/github/eddyystop/feathers-tests-fake-app-users?branch=master)
 [![Code Climate](https://codeclimate.com/repos/57979ed0b9ed527dd00004c2/badges/e5a3250f5a86a1e16ea6/gpa.svg)](https://codeclimate.com/repos/57979ed0b9ed527dd00004c2/feed)
@@ -8,7 +10,7 @@ Fake some Feathers dependencies in service unit tests. Starter for your own cust
 ## Code Example
 
 The following example is from `test/example.js`.
-It may be run with `npm run test:es6`.
+It may be run with `npm run test:only`.
 
 In this example we want to perform some unit tests on `feathers-service-verify-reset`'s resend method,
 so we need to fake its Feathers dependencies `app` and `users`.
@@ -18,7 +20,7 @@ and such tests would be more complicated.
 ```javascript
 const feathersFakes = require('feathers-tests-fake-app-user');
 const verifyResetService = require('feathers-service-verify-reset').service;
-const testUsersDb = [
+const testUsersDb = [ // faked in-memory database
   { _id: 'a', email: 'a', isVerified: false, verifyToken: '000', verifyExpires: Date.now() + 5000 },
 ];
 
@@ -28,7 +30,8 @@ describe('verifyReset::resend', () => {
   beforeEach(() => {
     db = clone(testUsersDb);
     app = feathersFakes.app(); // stub Feathers app
-    users = feathersFakes.users(app, db); // mock users service, passing it the test database
+    users = feathersFakes.makeDbService(app, 'users', db); // mock users service
+    app.use('/users', users);
     app.configure(verifyResetService());
     
     // Internally verifyResetService() attaches itself as a service with
@@ -58,9 +61,8 @@ describe('verifyReset::resend', () => {
 
 ## Motivation
 
-Unit tests are better tests than integration-only tests.
-It can however be difficult to fake the dependencies of a piece of code.
-This package shows an approach to faking the most common dependencies in a Feathers' project.
+It can be difficult to fake dependencies when running unit tests.
+This package provides fakes for the most common dependencies in a Feathers' project.
 
 ## Installation
 
@@ -72,6 +74,10 @@ You can then require the utilities.
 
 `/src` on GitHub contains the ES6 source.
 It will run on Node 6+ without transpiling.
+
+## Running the Example
+
+`test/example.js` is described above. It runs as part of the tests.
 
 ## API Reference
 
