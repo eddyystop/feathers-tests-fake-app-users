@@ -1,3 +1,7 @@
+DEPRECATED. Goodbye, adiós, au revoir, auf Wiedersehen, zàijiàn.
+
+Fakes should not be used in Feathers testing. https://medium.com/feathers-plus/automatic-tests-with-feathers-plus-cli-4844721a29cf
+
 ## feathers-tests-fake-app-users
 Fake some Feathers dependencies in service unit tests. Starter for your own customized fakes
 
